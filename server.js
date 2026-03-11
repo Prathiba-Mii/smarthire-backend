@@ -4,8 +4,10 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-
-app.use(cors());
+app.use(cors({
+  origin: 'https://smarthire-frontend-self.vercel.app',
+  credentials: true
+}));
 app.use(express.json());
 
 app.use('/api/auth', require('./routes/auth'));
