@@ -5,7 +5,11 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-  origin: 'https://smarthire-frontend-self.vercel.app',
+  origin: [
+    'https://smarthire-frontend-self.vercel.app',
+    'https://smarthire-frontend-git-main-prathiba-miis-projects.vercel.app',
+    'http://localhost:3000'
+  ],
   credentials: true
 }));
 app.use(express.json());
